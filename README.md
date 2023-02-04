@@ -2,7 +2,6 @@
 
 A minimal Python package with tools for documentation, linting, formatting and testing.
 
-Toolchain:
 - 📜 Docs: `sphinx`
 - 🧰 Linting: `ruff`
 - ⚫ Autoformatting: `black`
