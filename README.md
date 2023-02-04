@@ -45,6 +45,9 @@ python -m http.server 3527 -d ../build/sphinx/html
 ``` 
 Open a web browser on the host and go to `localhost:3527`. You should see the docs.
 
+![Screenshot of rendered documentation](assets/docs-screenshot.png)
+
+
 Finally, to create a wheel and sdist for your package:
 ```
 python -m build --wheel
