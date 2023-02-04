@@ -1,6 +1,6 @@
 # 🫖 Boilerplate
 
-![](https://img.shields.io/github/actions/workflow/status/stochastictalk/python-package-boilerplate/python-package.yml)
+![](https://img.shields.io/github/actions/workflow/status/stochastictalk/python-package-boilerplate/python-package.yml) ![](https://img.shields.io/github/v/release/stochastictalk/python-package-boilerplate?display_name=tag)
 
 A minimal Python package with tools for documentation, linting, formatting and testing.
 
@@ -54,3 +54,5 @@ Finally, to create a wheel and sdist for your package:
 python -m build --wheel
 ```
 They will be output to a directory `dist/`.
+
+Shields courtesy of [shields.io](https://shields.io/).
