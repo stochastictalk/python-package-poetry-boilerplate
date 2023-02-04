@@ -28,7 +28,7 @@ description = "A boilerplate package."
 readme = "README.md"
 requires-python = ">=3.7"
 dependencies = [
-    "tqdm==4.64.1",
+    "tqdm>=4.64.1"
 ]
 
 [project.optional-dependencies]
@@ -37,5 +37,7 @@ develop = [
     "pytest-cov",
     "black>=22.3.0",
     "pre-commit>=2.20.0",
-    "ruff"
+    "ruff",
+    "furo>=2022.12.7",
+    "build>=0.10.0" 
 ]

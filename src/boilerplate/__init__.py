@@ -1,4 +1,6 @@
-from ._say_hello import say_hello
+"""The mind-blowing main package!"""
+
+from ._get_hello import get_hello
 
 try:
     from ._version import version as __version__
@@ -8,5 +10,5 @@ except ImportError:
     version_tuple = (0, 0, "unknown version")
 
 __all__ = [
-    "say_hello",
+    "get_hello",
 ]

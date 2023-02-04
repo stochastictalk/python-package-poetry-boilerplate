@@ -5,10 +5,11 @@ def get_hello(name: str = None):
     ----------
     name : str
         The name to say howdy to.
-    
+
     Returns
     -------
     str
         Hello!
     """
-    return "Hello, world!" if name is None else f"Hello, {name}!"
+
+    return f"Hello, {name if name is not None else 'world'}!"
