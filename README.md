@@ -1,5 +1,7 @@
 # 🫖 Boilerplate
 
+![](https://img.shields.io/github/actions/workflow/status/stochastictalk/python-package-boilerplate/python-package.yml)
+
 A minimal Python package with tools for documentation, linting, formatting and testing.
 
 - 📜 Docs: `sphinx`
