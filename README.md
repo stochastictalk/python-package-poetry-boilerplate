@@ -55,4 +55,6 @@ python -m build --wheel
 ```
 They will be output to a directory `dist/`.
 
+Enjoy! 🫖
+
 Shields courtesy of [shields.io](https://shields.io/).
