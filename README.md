@@ -46,6 +46,8 @@ python -m http.server 3527 -d ../build/sphinx/html
 ``` 
 Open a web browser on the host and go to `localhost:3527`. You should see the docs.
 
+To start developing in the context of your own git repo, delete the `.git` directory and initialize a new one with `git init`. 
+
 ![Screenshot of rendered documentation](assets/docs-screenshot.png)
 
 
