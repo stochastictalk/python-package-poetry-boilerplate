@@ -1,12 +1,11 @@
 # 🫖 🎶 Poetry Boilerplate
 
-A minimal Poetry Python package with tools for documentation, linting, formatting and testing.
+A minimal Poetry Python package with tools for documentation, linting, formatting and testing. All you need to do is rename it et voilà! you have the starting point of your next Python package.
 
 - 📜 Docs: `sphinx`
 - 🧰 Linting: `ruff`
 - ⚫ Autoformatting: `black`
 - 🧪 Testing: `pytest`
-
 
 ## Quickstart
 
@@ -16,7 +15,9 @@ Activate the package virtual environment by running `poetry shell`.
 
 Install development dependencies by running `poetry install -E dev`.
 
-Test you can import the package by launching the Python interpreter via `python` and running
+### Check you can import the package
+
+Check you can import the package by launching the Python interpreter via `python` and running
 ```
 from boilerplate import say_hello
 say_hello() # Prints 'hello, universe! 💫'
@@ -24,13 +25,38 @@ say_hello() # Prints 'hello, universe! 💫'
 
 Exit the Python interpreter by running `exit()`.
 
+### 🧰 ⚫  Enable linting and autoformatting
+
 Install the pre-commit hooks by running `pre-commit install`. The pre-commit hooks will run each time you try to make a commit. You can edit their configuration in `pyproject.toml`.
 
+### 🧪 Testing
 
+Run the tests by calling `pytest`. Add and modify tests under `tests/`.
 
-When you're finished with the virtual environment, you can exit the shell in which it is activated via `exit`.
+### 📜 Docs
 
+The boilerplate package provides autodocs for numpy docstrings. To compile the documentation, run
+```
+cd docs
+make html
+```
+Host the resulting doc HTMLs using Python's webserver:
+```
+python -m http.server 3527 -d ../build/sphinx/html
+``` 
+Open a web browser on the host and go to `localhost:3527`. You should see the docs.
 
+![Screenshot of rendered documentation](assets/docs-screenshot.png)
+
+### ✏️ Renaming the package from `boilerplate` to `your_package_name`
+
+To rename the package from `boilerplate to `your_package_name`, you need to
+* rename the `boilerplate` directory to `your_package_name`
+* change `name` in `pyproject.toml`
+* change `tests/test_say_hello.py` to import from `your_package_name` rather than `boilerplate`
+* replace mentions of `boilerplate` in `docs/conf.py` and `docs/*.rst` 
+
+To start developing in the context of your own git repo, delete the `.git` directory and initialize a new one with `git init`. 
 
 ### Using Poetry
 
@@ -44,50 +70,4 @@ To add a dependency, include it under the `tool.poetry.dependencies` stanza in `
 
 The package is installed in the virtual environment in editable mode by default. If you want to install in non-editable mode, run `poetry install --no-root` from within the virtual environment.
 
-###
-
-Great! 
-
-
-First, prove to yourself the package installs correctly, its tests run, and its documentation compiles.
-
-If you're using Docker, launch a Python container and connect to its shell
-```
-docker run -it -p 3527:3527 -v ${PWD}:/package python:3.9 /bin/bash
-```
-
-Install the development version of the package in editable mode to the environment with
-```
-pip install -e '.[develop]'
-```
-The package's configuration is in `pyproject.toml` (summary [here](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html)). The directory structure follows the src layout ([details](https://setuptools.pypa.io/en/latest/userguide/package_discovery.html)). Its version is managed using `setuptools_scm`, meaning version numbers are automatically extracted from git tags: you can read about the versioning logic [here](https://pypi.org/project/setuptools-scm/).
-
-Install the precommit hooks:
-```
-pre-commit install
-```
-You can edit the config of these in `.pre-commit-config.yaml`.
-
-Check the tests run:
-```
-pytest
-```
-Compile the documentation:
-```
-cd docs
-make html
-```
-Host the resulting doc HTMLs using Python's webserver:
-```
-python -m http.server 3527 -d ../build/sphinx/html
-``` 
-Open a web browser on the host and go to `localhost:3527`. You should see the docs.
-
-![Screenshot of rendered documentation](assets/docs-screenshot.png)
-
-
-Finally, to create a wheel and sdist for your package:
-```
-python -m build --wheel
-```
-They will be output to a directory `dist/`.
+To create a wheel, run `poetry build`. The wheel and sdist archive are written to `dist/`. Only pure Python wheels are supported by Poetry.

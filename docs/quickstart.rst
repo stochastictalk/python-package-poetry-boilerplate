@@ -8,7 +8,7 @@ The example below provides a demonstration of the package's key functionality.
 
 .. code-block:: sh
 
-    from boilerplate import get_hello
+    from boilerplate import say_hello
     
-    print(get_hello())
+    say_hello()
 
