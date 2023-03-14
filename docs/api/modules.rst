@@ -1,5 +1,5 @@
-src
-===
+boilerplate
+===========
 
 .. toctree::
    :maxdepth: 4

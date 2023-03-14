@@ -1,13 +1,16 @@
 boilerplate package
 ===================
 
-Subpackages
------------
+Submodules
+----------
 
-.. toctree::
-   :maxdepth: 4
+boilerplate.say\_hello module
+-----------------------------
 
-   boilerplate.subboilerplate
+.. automodule:: boilerplate.say_hello
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 Module contents
 ---------------

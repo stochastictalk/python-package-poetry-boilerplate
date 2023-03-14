@@ -19,7 +19,6 @@ Contents
 Modules
 =======
 * :doc:`boilerplate </api/boilerplate>` - top-level package.
-* :doc:`boilerplate.subboilerplate </api/boilerplate.subboilerplate>` - subpackage.
 
 
 
