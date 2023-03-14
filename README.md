@@ -46,6 +46,8 @@ python -m http.server 3527 -d ../build/sphinx/html
 ``` 
 Open a web browser on the host and go to `localhost:3527`. You should see the docs.
 
+To start developing in the context of your own git repo, delete the `.git` directory and initialize a new one with `git init`. 
+
 ![Screenshot of rendered documentation](assets/docs-screenshot.png)
 
 ### ✏️ Renaming the package from `boilerplate` to `your_package_name`
@@ -71,3 +73,5 @@ To add a dependency, include it under the `tool.poetry.dependencies` stanza in `
 The package is installed in the virtual environment in editable mode by default. If you want to install in non-editable mode, run `poetry install --no-root` from within the virtual environment.
 
 To create a wheel, run `poetry build`. The wheel and sdist archive are written to `dist/`. Only pure Python wheels are supported by Poetry.
+
+Enjoy! 🫖
