@@ -1,43 +1,41 @@
 # Replace every appearance of 'boilerplate' with package name.
 
-[build-system]
-requires = [
-    "setuptools>=64",
-    "setuptools_scm[toml]>=6.2" # For version numbers from git.
+[tool.poetry]
+name = "boilerplate"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+tqdm = "^4.65.0"
+"pytest" = { version = "^7.0.0", optional = true }
+"pytest-cov" = { version = "^4.0.0", optional = true }
+"black" = { version = "^22.3.0", optional = true }
+"pre-commit" = { version = "^2.20.0", optional = true }
+"ruff" = { version = "^0.0.200", optional = true }
+"furo" = { version = "^2022.12.7", optional = true }
+
+
+[tool.poetry.extras]
+dev = [
+    "pytest",
+    "pytest-cov",
+    "black",
+    "pre-commit",
+    "ruff",
+    "furo"
 ]
-build-backend = "setuptools.build_meta"
 
-[tool.setuptools]
-include-package-data = true
-package-dir = { "" = "src" }
-
-[tool.setuptools.packages.find]
-where = ["src"]
-namespaces = true
-
-[tool.setuptools_scm]
-write_to = "src/boilerplate/_version.py"
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
 [tool.ruff]
 line-length = 120
+# Ignore unused variables (for Pytest import checks).
+ignore = ["F401"]
 
-[project]
-name = "package-boilerplate"
-dynamic = ["version"]
-description = "A boilerplate package."
-readme = "README.md"
-requires-python = ">=3.7"
-dependencies = [
-    "tqdm>=4.64.1"
-]
-
-[project.optional-dependencies]
-develop = [
-    "pytest",
-    "pytest-cov",
-    "black>=22.3.0",
-    "pre-commit>=2.20.0",
-    "ruff",
-    "furo>=2022.12.7",
-    "build>=0.10.0" 
-]
+[tool.black]
+line-length = 120
