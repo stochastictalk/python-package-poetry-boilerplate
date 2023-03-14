@@ -20,7 +20,7 @@ Install development dependencies by running `poetry install -E dev`.
 Check you can import the package by launching the Python interpreter via `python` and running
 ```
 from boilerplate import say_hello
-say_hello() # Prints 'hello, universe! 💫'
+say_hello() # Prints 'hello, world, hello, universe! 💫'
 ``` 
 
 Exit the Python interpreter by running `exit()`.
