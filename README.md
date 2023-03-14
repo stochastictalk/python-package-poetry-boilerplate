@@ -9,7 +9,7 @@ A minimal Poetry Python package with tools for documentation, linting, formattin
 
 ## Quickstart
 
-First make sure you have [Poetry installed](https://python-poetry.org/docs/).
+First clone this repository, set it as your working directory, and make sure you have [Poetry installed](https://python-poetry.org/docs/).
 
 Activate the package virtual environment by running `poetry shell`. 
 
@@ -25,11 +25,11 @@ say_hello() # Prints 'hello, world, hello, universe! 💫'
 
 Exit the Python interpreter by running `exit()`.
 
-### 🧰 ⚫  Enable linting and autoformatting
+### 🧰  Enable linting and autoformatting
 
 Install the pre-commit hooks by running `pre-commit install`. The pre-commit hooks will run each time you try to make a commit. You can edit their configuration in `pyproject.toml`.
 
-### 🧪 Testing
+### 🧪 Testing  
 
 Run the tests by calling `pytest`. Add and modify tests under `tests/`.
 
@@ -60,7 +60,7 @@ To rename the package from `boilerplate to `your_package_name`, you need to
 
 To start developing in the context of your own git repo, delete the `.git` directory and initialize a new one with `git init`. 
 
-### Using Poetry
+### 🎶 Using Poetry
 
 🚨 This section is a quick guide to Poetry. Skip it if you are already comforatble with how to use Poetry to create a Python package 🚨
 
