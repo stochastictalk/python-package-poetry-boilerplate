@@ -59,6 +59,7 @@ sed -i.bak "s/[[:<:]]$OLD_NAME[[:>:]]/$NEW_NAME/Ig" pyproject.toml || { error_me
 sed -i.bak "s/[[:<:]]$OLD_NAME[[:>:]]/$NEW_NAME/Ig" docs/conf.py || { error_message "Failed to update docs/conf.py."; exit 1; }
 sed -i..bak "s/[[:<:]]$OLD_NAME[[:>:]]/$NEW_NAME/Ig" docs/*.rst || { error_message "Failed to update docs/*.rst."; exit 1; }
 rm -f pyproject.toml.bak docs/*.bak
+rm -rf "$OLD_NAME/"
 
 success_message "Rename successful."
 

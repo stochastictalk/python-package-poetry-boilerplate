@@ -52,11 +52,7 @@ To start developing in the context of your own git repo, delete the `.git` direc
 
 ### ✏️ Renaming the package from `boilerplate` to `your_package_name`
 
-To rename the package from `boilerplate to `your_package_name`, you need to
-* rename the `boilerplate` directory to `your_package_name`
-* change `name` in `pyproject.toml`
-* change `tests/test_say_hello.py` to import from `your_package_name` rather than `boilerplate`
-* replace mentions of `boilerplate` in `docs/conf.py` and `docs/*.rst` 
+Rename the package by running `rename.sh your_package_name` from the repo root.
 
 To start developing in the context of your own git repo, delete the `.git` directory and initialize a new one with `git init`. 
 
