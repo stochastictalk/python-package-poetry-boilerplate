@@ -4,11 +4,11 @@ readonly NEW_NAME=$1
 readonly OLD_NAME=${2:-boilerplate}
 
 error_message() {
-    printf "\033[0;31mrename error: \033[0m" "$1"
+    printf "\033[0;31mrename error: %s\033[0m" "$1"
 }
 
 success_message() {
-    printf "\033[;32mrename: \033[0m" "$1"
+    printf "\033[;32mrename: %s\033[0m" "$1"
 }
 
 cleanup() {
@@ -48,14 +48,18 @@ if [[ $NEW_NAME =~ ^[0-9] ]]; then
     exit 1
 fi
 
+trap cleanup ERR
+
 # Rename dir.
-mv $OLD_NAME/ $NEW_NAME/ || { error_message "Failed to rename directory '$OLD_NAME'."; exit 1; }
+mv "$OLD_NAME/" "$NEW_NAME/" || { error_message "Failed to rename directory '$OLD_NAME'."; exit 1; }
 
 # Update pyproject.toml.
-sed -e ".bak" -i "s/name = "$OLD_NAME"/name = "$NEW_NAME"/g" pyproject.toml || { error_message "Failed to update pyproject.toml."; exit 1; }
+sed -i.bak "s/[[:<:]]$OLD_NAME[[:>:]]/$NEW_NAME/Ig" pyproject.toml || { error_message "Failed to update pyproject.toml."; exit 1; }
 # Update docs/conf.py and docs/*.rst.
-sed -e ".bak" -i "s/$OLD_NAME/$NEW_NAME/g" docs/conf.py || { error_message "Failed to update docs/conf.py."; exit 1; }
-sed -e ".bak" -i "s/$OLD_NAME/$NEW_NAME/g" docs/*.rst || { error_message "Failed to update docs/*.rst."; exit 1; }
+sed -i.bak "s/[[:<:]]$OLD_NAME[[:>:]]/$NEW_NAME/Ig" docs/conf.py || { error_message "Failed to update docs/conf.py."; exit 1; }
+sed -i..bak "s/[[:<:]]$OLD_NAME[[:>:]]/$NEW_NAME/Ig" docs/*.rst || { error_message "Failed to update docs/*.rst."; exit 1; }
 rm -f pyproject.toml.bak docs/*.bak
 
 success_message "Rename successful."
+
+trap - ERR
